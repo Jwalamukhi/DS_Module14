@@ -14,13 +14,39 @@ To write a C program to delete three elements from the filled circular queue.
 ```
 /*
 Program to delete three elements from the filled circular queue
-Developed by: 
-RegisterNumber:  
+Developed by: Jwalamukhi S
+RegisterNumber: 212223040079 
 */
+
+/*#include <stdio.h>
+
+#define SIZE 5
+
+int items[SIZE];
+int front = -1, rear = -1;
+*/
+int deQueue() {
+ 
+  
+  if(front==-1 && rear==-1)
+  {printf("Empty");
+  return 0;
+}
+else if(front==rear)
+{
+    front=rear=-1;
+    return 0;
+}
+else
+{
+    front=(front+1)%SIZE;
+    return 0;
+}}
 ```
 
 ## Output:
 
+![Screenshot 2025-05-20 212127](https://github.com/user-attachments/assets/61db2f60-0383-4c21-8b4e-3de26b51290b)
 
 
 ## Result:
