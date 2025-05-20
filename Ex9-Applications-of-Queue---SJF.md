@@ -13,13 +13,85 @@ To incorporate the code to calculate the Total Waiting Time and Average Waiting 
 ```
 /*
 Program to find the Total Waiting Time and Average Waiting Time in Shortest Job First scheduling algorithm.
-Developed by: 
-RegisterNumber:  
+Developed by:Jwalamukhi S 
+RegisterNumber:  212223040079
 */
+
+#include<stdio.h>
+ 
+int main()
+{
+    int bt[20],p[20],wt[20],tat[20],i,j,n,total=0,pos,temp;
+    float avg_wt,avg_tat;
+    //printf("Enter number of process:");
+    scanf("%d",&n);
+ 
+   // printf("\nEnter Burst Time:\n");
+    for(i=0;i<n;i++)
+    {
+      //  printf("p%d:",i+1);
+        scanf("%d",&bt[i]);
+        p[i]=i+1;           //contains process number
+    }
+ 
+    //sorting burst time in ascending order using selection sort
+    for(i=0;i<n;i++)
+    {
+        pos=i;
+        for(j=i+1;j<n;j++)
+        {
+            if(bt[j]<bt[pos])
+                pos=j;
+        }
+ 
+        temp=bt[i];
+        bt[i]=bt[pos];
+        bt[pos]=temp;
+ 
+        temp=p[i];
+        p[i]=p[pos];
+        p[pos]=temp;
+    }
+ 
+    wt[0]=0;            //waiting time for first process will be zero
+ 
+    //calculate waiting time
+    
+    wt[0]=0;
+    for(i=1;i<n;i++)
+   { 
+    wt[i]=0;
+    for(j=0;j<i;j++)
+    {wt[i]+=bt[j];
+    }
+    total+=wt[i];
+   }
+   avg_wt=(float)total/n;
+    total=0;
+ 
+    printf("Process    Burst Time    Waiting Time  Turnaround Time\n");
+    for(i=0;i<n;i++)
+    {
+        tat[i]=bt[i]+wt[i];     //calculate turnaround time
+        total+=tat[i];
+        //printf("\n");
+        printf("p%d          %d               %d             %d\n",p[i],bt[i],wt[i],tat[i]);
+    }
+ 
+    avg_tat=(float)total/n;     //average turnaround time
+   // printf("\n");
+    printf("Average Waiting Time=%f\n",avg_wt);
+  //  printf("\n");
+    printf("Average Turnaround Time=%f\n",avg_tat);
+    return 0;
+}
+
 ```
 
 ## Output:
 
+![Screenshot 2025-05-20 213244](https://github.com/user-attachments/assets/dcea3722-9da9-44c0-9895-14fe5ea34c34)
+![Screenshot 2025-05-20 213250](https://github.com/user-attachments/assets/2906eab6-bb09-4f34-b46c-3839fa61ad2d)
 
 
 ## Result:
