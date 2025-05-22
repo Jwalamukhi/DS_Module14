@@ -3,11 +3,23 @@
 ## AIM:
 To incorporate the code to calculate the Total Waiting Time and Average Waiting Time in Shortest Job First scheduling algorithm.
 ## Algorithm
-1. 
-2. 
-3. 
-4.  
-5.   
+
+1.Start
+
+2.Read the number of processes n and their burst times into the array bt[].
+
+3.Assign process numbers to array p[] (from 1 to n).
+
+4.Sort the processes based on burst time using selection sort, updating both bt[] and p[] arrays.
+
+5.Calculate the waiting time wt[] for each process by summing burst times of previous processes.
+
+6.Calculate the turnaround time tat[] as the sum of burst time and waiting time for each process.
+
+7.Compute and print the average waiting time and average turnaround time.
+
+8.End
+ 
 
 ## Program:
 ```
